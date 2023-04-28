@@ -31,8 +31,16 @@ To learn more about Next.js, take a look at the following resources:
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This project uses Github Actions for CI/CD and is hosted on [Vercel's cloud](https://vercel.com)  infrastructure. See the [Actions Tab](https://github.com/j-forsythe/req97670/actions) to view and analyze the pipeline. Two different deployment options are available in this project: Pull Request Preview & Production.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Pull Request Preview
+
+Upon creation of a pull request, this integration will create a build of the requesting branch allowing testing of the code changes in a deployed environment. The preview build URL is [https://req97670-j-forsythe.vercel.app/](https://req97670-j-forsythe.vercel.app/).
+The configuration file for this deployment can be found in [.github/workflows/preview.yaml](https://github.com/j-forsythe/req97670/blob/main/.github/workflows/preview.yaml)
+
+### Production
+
+Code merged to the `main` branch will trigger the production build of the project which is hosted here: [https://req97670.vercel.app/](https://req97670.vercel.app/).
+The configuration file for this deployment can be found in [.github/workflows/production.yaml](https://github.com/j-forsythe/req97670/blob/main/.github/workflows/production.yaml).
