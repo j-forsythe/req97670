@@ -8,14 +8,13 @@ const OrgChart = () => {
   const { nodes, roots, leaves } = flatToTree(data, 'id', 'reports_to', 0)
 
   function renderLeaves(node) {
-    return (
-      node.children.length > 0 &&
-      node.children.map((leaf) => (
-        <TreeNode label={<div>{leaf.title}</div>} key={leaf.id}>
-          {renderLeaves(leaf)}
-        </TreeNode>
-      ))
-    )
+    return node.children.length > 0
+      ? node.children.map((leaf) => (
+          <TreeNode label={<div>{leaf.title}</div>} key={leaf.id}>
+            {renderLeaves(leaf)}
+          </TreeNode>
+        ))
+      : null
   }
 
   return (
