@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Tree, TreeNode } from 'react-organizational-chart'
 
 import { flatToTree } from '../utils/flatToTree'
-import positions from '../../data/positions.json'
 import PositionBadge from './PositionBadge'
 
 const OrgChart = () => {
   const [employees, setEmployees] = useState(null)
+  const [positions, setPositions] = useState(null)
   const [isLoading, setLoading] = useState(false)
-  const { nodes, roots, leaves } = flatToTree(positions, 'id', 'reports_to', 0)
 
   function renderLeaves(node) {
     return (
@@ -28,6 +27,21 @@ const OrgChart = () => {
     )
   }
 
+  // get all positions on render
+  useEffect(() => {
+    setLoading(true)
+    fetch('/api/positions')
+      .then((res) => res.json())
+      .then((data) => {
+        const { roots } = flatToTree(data, 'id', 'reports_to', 0)
+        setPositions(roots)
+        setLoading(false)
+        // store full list in ref for resets
+        // productList.current = data
+      })
+      .catch((error) => console.error(error))
+  }, [])
+
   // get all employees on render
   useEffect(() => {
     setLoading(true)
@@ -43,18 +57,20 @@ const OrgChart = () => {
   }, [])
 
   if (isLoading) return <p>Loading...</p>
-  if (!data) return <p>No data</p>
+  if (!positions) return <p>No data</p>
 
   return (
     <Tree
       label={
         <PositionBadge
-          position={roots[1]}
-          employee={employees.find((emp) => emp.id === roots[1].employee_id)}
+          position={positions[1]}
+          employee={employees.find(
+            (emp) => emp.id === positions[1].employee_id,
+          )}
         />
       }
     >
-      {roots[1].children.map((node) => renderLeaves(node))}
+      {positions[1].children.map((node) => renderLeaves(node))}
     </Tree>
   )
 }
