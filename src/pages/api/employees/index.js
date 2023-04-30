@@ -1,10 +1,13 @@
 const jsonfile = require('jsonfile')
+const path = require('path')
+
+const file = path.join(process.cwd(), 'data/employees.json')
 
 export default function handler(req, res) {
   switch (req.method) {
     case 'GET':
       // read JSON object from file
-      jsonfile.readFile('data/employees.json', 'utf-8', (err, data) => {
+      jsonfile.readFile(file, 'utf-8', (err, data) => {
         if (err) {
           throw err
         }

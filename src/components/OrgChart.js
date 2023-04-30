@@ -15,7 +15,7 @@ const OrgChart = () => {
         label={
           <PositionBadge
             position={node}
-            employee={employees.find((emp) => emp.id === node.employee_id)}
+            employee={employees?.find((emp) => emp.id === node.employee_id)}
           />
         }
         key={node.id}
@@ -64,7 +64,7 @@ const OrgChart = () => {
       label={
         <PositionBadge
           position={positions[1]}
-          employee={employees.find(
+          employee={employees?.find(
             (emp) => emp.id === positions[1].employee_id,
           )}
         />
