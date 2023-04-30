@@ -2,139 +2,138 @@
     {
         "id": 1,
         "title": "Director",
-        "reports_to": 0,
-        "employee_id": "emp01"
+        "reportsTo": 0,
+        "employeeId": "emp01"
     },
     {
         "id": 2,
         "title": "Senior Manager",
-        "reports_to": 1,
-        "employee_id": "emp02"
+        "reportsTo": 1,
+        "employeeId": "emp02"
     },
     {
         "id": 3,
         "title": "Senior Manager",
-        "reports_to": 1,
-        "employee_id": "emp03"
+        "reportsTo": 1,
+        "employeeId": "emp03"
     },
     {
         "id": 4,
         "title": "Senior Manager",
-        "reports_to": 1,
-        "employee_id": "emp04"
+        "reportsTo": 1,
+        "employeeId": "emp04"
     },
     {
         "id": 5,
-        "title": "Senior Manager",
-        "reports_to": 1,
-        "employee_id": "emp05"
+        "title": "Manager",
+        "reportsTo": 2
     },
     {
         "id": 6,
         "title": "Manager",
-        "reports_to": 2,
-        "employee_id": "emp06"
+        "reportsTo": 2,
+        "employeeId": "emp06"
     },
     {
         "id": 7,
         "title": "Manager",
-        "reports_to": 3,
-        "employee_id": "emp07"
+        "reportsTo": 3,
+        "employeeId": "emp07"
     },
     {
         "id": 8,
         "title": "Manager",
-        "reports_to": 4,
-        "employee_id": "emp08"
+        "reportsTo": 4,
+        "employeeId": "emp08"
     },
     {
         "id": 9,
         "title": "Manager",
-        "reports_to": 5,
-        "employee_id": "emp09"
+        "reportsTo": 5,
+        "employeeId": "emp09"
     },
     {
         "id": 10,
         "title": "Senior Developer",
-        "reports_to": 9,
-        "employee_id": "emp010"
+        "reportsTo": 9,
+        "employeeId": "emp010"
     },
     {
         "id": 11,
         "title": "Senior Developer",
-        "reports_to": 8,
-        "employee_id": "emp011"
+        "reportsTo": 8,
+        "employeeId": "emp011"
     },
     {
         "id": 12,
         "title": "Senior Developer",
-        "reports_to": 8,
-        "employee_id": "emp012"
+        "reportsTo": 8,
+        "employeeId": "emp012"
     },
     {
         "id": 13,
         "title": "Senior Developer",
-        "reports_to": 9,
-        "employee_id": "emp013"
+        "reportsTo": 9,
+        "employeeId": "emp013"
     },
     {
         "id": 14,
         "title": "Senior Developer",
-        "reports_to": 7,
-        "employee_id": "emp014"
+        "reportsTo": 7,
+        "employeeId": "emp014"
     },
     {
         "id": 15,
         "title": "Senior Developer",
-        "reports_to": 6,
-        "employee_id": "emp015"
+        "reportsTo": 6,
+        "employeeId": "emp015"
     },
     {
         "id": 16,
         "title": "Junior Developer",
-        "reports_to": 11,
-        "employee_id": "emp016"
+        "reportsTo": 11,
+        "employeeId": "emp016"
     },
     {
         "id": 17,
         "title": "Junior Developer",
-        "reports_to": 12,
-        "employee_id": "emp017"
+        "reportsTo": 12,
+        "employeeId": "emp017"
     },
     {
         "id": 18,
         "title": "Junior Developer",
-        "reports_to": 11,
-        "employee_id": "emp018"
+        "reportsTo": 11,
+        "employeeId": "emp018"
     },
     {
         "id": 19,
         "title": "Junior Developer",
-        "reports_to": 11,
-        "employee_id": "emp019"
+        "reportsTo": 11,
+        "employeeId": "emp019"
     },
     {
         "id": 20,
         "title": "Junior Developer",
-        "reports_to": 13,
-        "employee_id": "emp020"
+        "reportsTo": 13,
+        "employeeId": "emp020"
     },
     {
         "id": 21,
         "title": "Junior Developer",
-        "reports_to": 10,
-        "employee_id": "emp021"
+        "reportsTo": 10,
+        "employeeId": "emp021"
     },
     {
         "id": 22,
         "title": "Junior Developer",
-        "reports_to": 11,
-        "employee_id": "emp022"
+        "reportsTo": 11,
+        "employeeId": "emp022"
     },
     {
         "id": 23,
         "title": "Junior Developer",
-        "reports_to": 12,
-        "employee_id": "emp023"
+        "reportsTo": 12,
+        "employeeId": "emp023"
     }
 ]
