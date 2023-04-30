@@ -33,7 +33,7 @@ const NewEmployee = () => {
   return (
     <>
       <Link href="/">&lt;&nbsp;Back</Link>
-      <h1>New Employee</h1>
+      <h2>New Employee</h2>
       <EmployeeForm
         handleSubmit={createEmployee}
         submitSuccess={employeeAdded}
