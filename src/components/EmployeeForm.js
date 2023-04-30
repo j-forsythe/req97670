@@ -1,6 +1,6 @@
-import React, { Fragment } from 'react'
+import React from 'react'
 
-import { Formik, Field, Form, FieldArray } from 'formik'
+import { Formik, Field, Form } from 'formik'
 
 const styles = {
   label: 'block text-gray-700 text-sm font-bold pt-2 pb-1',
@@ -21,13 +21,8 @@ const EmployeeForm = ({
     <Formik
       initialValues={
         employeeData ?? {
-          productId: '',
-          productName: '',
-          productOwnerName: '',
-          Developers: [''],
-          scrumMasterName: '',
-          startDate: '',
-          methodology: 'Agile',
+          firstName: '',
+          lastName: '',
         }
       }
       onSubmit={(values, { setSubmitting }) => {
@@ -37,108 +32,25 @@ const EmployeeForm = ({
     >
       {({ values, isSubmitting }) => (
         <Form>
-          <label className={styles.label} htmlFor="productName">
-            Product Name
+          <label className={styles.label} htmlFor="firstName">
+            First Name
           </label>
           <Field
             className={styles.field}
-            id="productName"
-            name="productName"
+            id="firstName"
+            name="firstName"
             required
           />
 
-          <label className={styles.label} htmlFor="productOwnerName">
-            Product Owner
+          <label className={styles.label} htmlFor="lastName">
+            Last Name
           </label>
           <Field
             className={styles.field}
-            id="productOwnerName"
-            name="productOwnerName"
+            id="lastName"
+            name="lastName"
             required
           />
-
-          <label className={styles.label} htmlFor="scrumMasterName">
-            Scrum Master
-          </label>
-          <Field
-            className={styles.field}
-            id="scrumMasterName"
-            name="scrumMasterName"
-            required
-          />
-
-          <label className={styles.label} htmlFor="Developers">
-            Developers
-          </label>
-          <FieldArray
-            id="Developers"
-            name="Developers"
-            required
-            render={(arrayHelpers) =>
-              values.Developers.map((developer, index) => (
-                <Fragment key={index}>
-                  <Field
-                    name={`Developers.${index}`}
-                    className={`${styles.field} ${index === 0 ? 'mb-6' : ''}`}
-                    required
-                  />
-                  {
-                    /* There must always be one developer */
-                    values.Developers.length > 1 && index > 0 && (
-                      <button
-                        type="button"
-                        className="p-4"
-                        onClick={() => arrayHelpers.remove(index)} // remove a developer from the list
-                      >
-                        -
-                      </button>
-                    )
-                  }
-                  {
-                    /* Max developers is five */
-                    values.Developers.length < 5 &&
-                      index >= values.Developers.length - 1 && (
-                        <button
-                          type="button"
-                          className="p-4"
-                          onClick={() => arrayHelpers.insert(index + 1, '')} // insert an empty string at a position
-                        >
-                          +
-                        </button>
-                      )
-                  }
-                </Fragment>
-              ))
-            }
-          />
-          <label className={styles.label} htmlFor="startDate">
-            Start Date
-          </label>
-          <Field
-            className={styles.field}
-            id="startDate"
-            name="startDate"
-            type="date"
-            required
-          />
-          <div role="group" aria-labelledby="methodology">
-            <label className={styles.label} htmlFor="methodology">
-              Methodology
-            </label>
-            <label className="mr-4">
-              <Field value="Agile" type="radio" name="methodology" />
-              Agile
-            </label>
-            <label>
-              <Field
-                value="Waterfall"
-                type="radio"
-                name="methodology"
-                required
-              />
-              Waterfall
-            </label>
-          </div>
 
           <div className="mt-8">
             <button
@@ -152,10 +64,10 @@ const EmployeeForm = ({
         </Form>
       )}
     </Formik>
-    {submitSuccess && <p>Product {employeeData ? 'Updated' : 'Added'}!</p>}
+    {submitSuccess && <p>Employee {employeeData ? 'Updated' : 'Added'}!</p>}
     {submitError && (
       <p>
-        There was an error {employeeData ? 'updating' : 'adding'} the product.
+        There was an error {employeeData ? 'updating' : 'adding'} the employee.
         Please try again later.
       </p>
     )}
