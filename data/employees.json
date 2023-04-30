@@ -1,117 +1,117 @@
 [
     {
         "id": "emp01",
-        "first_name": "Casey",
-        "last_name": "Emerson"
+        "firstName": "Casey",
+        "lastName": "Emerson"
     },
     {
         "id": "emp02",
-        "first_name": "Blake",
-        "last_name": "May"
+        "firstName": "Blake",
+        "lastName": "May"
     },
     {
         "id": "emp03",
-        "first_name": "Hayes",
-        "last_name": "Nicholson"
+        "firstName": "Hayes",
+        "lastName": "Nicholson"
     },
     {
         "id": "emp04",
-        "first_name": "Concepcion",
-        "last_name": "Stevens"
+        "firstName": "Concepcion",
+        "lastName": "Stevens"
     },
     {
         "id": "emp05",
-        "first_name": "Effie",
-        "last_name": "Walsh"
+        "firstName": "Effie",
+        "lastName": "Walsh"
     },
     {
         "id": "emp06",
-        "first_name": "Matilda",
-        "last_name": "Patel"
+        "firstName": "Matilda",
+        "lastName": "Patel"
     },
     {
         "id": "emp07",
-        "first_name": "Ford",
-        "last_name": "Pruitt"
+        "firstName": "Ford",
+        "lastName": "Pruitt"
     },
     {
         "id": "emp08",
-        "first_name": "Gamble",
-        "last_name": "Foreman"
+        "firstName": "Gamble",
+        "lastName": "Foreman"
     },
     {
         "id": "emp09",
-        "first_name": "Stark",
-        "last_name": "Mcdonald"
+        "firstName": "Stark",
+        "lastName": "Mcdonald"
     },
     {
         "id": "emp010",
-        "first_name": "Gilda",
-        "last_name": "Mosley"
+        "firstName": "Gilda",
+        "lastName": "Mosley"
     },
     {
         "id": "emp011",
-        "first_name": "Charmaine",
-        "last_name": "Dixon"
+        "firstName": "Charmaine",
+        "lastName": "Dixon"
     },
     {
         "id": "emp012",
-        "first_name": "Regina",
-        "last_name": "Lara"
+        "firstName": "Regina",
+        "lastName": "Lara"
     },
     {
         "id": "emp013",
-        "first_name": "Estrada",
-        "last_name": "Gross"
+        "firstName": "Estrada",
+        "lastName": "Gross"
     },
     {
         "id": "emp014",
-        "first_name": "Peggy",
-        "last_name": "Morales"
+        "firstName": "Peggy",
+        "lastName": "Morales"
     },
     {
         "id": "emp015",
-        "first_name": "Benton",
-        "last_name": "Vaughn"
+        "firstName": "Benton",
+        "lastName": "Vaughn"
     },
     {
         "id": "emp016",
-        "first_name": "Dean",
-        "last_name": "Harding"
+        "firstName": "Dean",
+        "lastName": "Harding"
     },
     {
         "id": "emp017",
-        "first_name": "Osborne",
-        "last_name": "Deleon"
+        "firstName": "Osborne",
+        "lastName": "Deleon"
     },
     {
         "id": "emp018",
-        "first_name": "Marjorie",
-        "last_name": "Ratliff"
+        "firstName": "Marjorie",
+        "lastName": "Ratliff"
     },
     {
         "id": "emp019",
-        "first_name": "Priscilla",
-        "last_name": "Golden"
+        "firstName": "Priscilla",
+        "lastName": "Golden"
     },
     {
         "id": "emp020",
-        "first_name": "Dominguez",
-        "last_name": "Gaines"
+        "firstName": "Dominguez",
+        "lastName": "Gaines"
     },
     {
         "id": "emp021",
-        "first_name": "Olsen",
-        "last_name": "Harrington"
+        "firstName": "Olsen",
+        "lastName": "Harrington"
     },
     {
         "id": "emp022",
-        "first_name": "Jaclyn",
-        "last_name": "Hatfield"
+        "firstName": "Jaclyn",
+        "lastName": "Hatfield"
     },
     {
         "id": "emp023",
-        "first_name": "Lila",
-        "last_name": "Velazquez"
+        "firstName": "Lila",
+        "lastName": "Velazquez"
     }
 ]

@@ -15,7 +15,7 @@ const OrgChart = () => {
         label={
           <PositionBadge
             position={node}
-            employee={employees?.find((emp) => emp.id === node.employee_id)}
+            employee={employees?.find((emp) => emp.id === node.employeeId)}
           />
         }
         key={node.id}
@@ -33,7 +33,7 @@ const OrgChart = () => {
     fetch('/api/positions')
       .then((res) => res.json())
       .then((data) => {
-        const { roots } = flatToTree(data, 'id', 'reports_to', 0)
+        const { roots } = flatToTree(data, 'id', 'reportsTo', 0)
         setPositions(roots)
         setLoading(false)
         // store full list in ref for resets
@@ -65,7 +65,7 @@ const OrgChart = () => {
         <PositionBadge
           position={positions[1]}
           employee={employees?.find(
-            (emp) => emp.id === positions[1].employee_id,
+            (emp) => emp.id === positions[1].employeeId,
           )}
         />
       }
