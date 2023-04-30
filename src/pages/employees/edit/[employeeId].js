@@ -52,10 +52,13 @@ const EditEmployee = () => {
 
   return (
     <>
-      <Link href="/">&lt;&nbsp;Back</Link>
-      <h1>
-        Editing {data.firstName} {data.lastName}
-      </h1>
+      <div className="flex  my-4">
+        <Link href="/">&lt;&nbsp;Back</Link>
+        <h2 className="basis-full text-center">
+          {' '}
+          Editing {data.firstName} {data.lastName}
+        </h2>
+      </div>
       <EmployeeForm
         employeeData={data}
         submitSuccess={employeeUpdated}
