@@ -21,7 +21,7 @@ const UnfillPosition = ({ position, onUnfillPosition }) => {
       >
         <form
           method="dialog"
-          className="relative rounded top-20 mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
+          className="relative rounded top-20 md:mx-auto p-5 border w-96 shadow-lg rounded-md bg-white"
         >
           <p className=" font-semibold text-lg text-center py-6">
             Are you sure you want to remove employee?

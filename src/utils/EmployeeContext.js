@@ -11,8 +11,6 @@ export const EmployeeContextProvider = ({ children }) => {
       .then((res) => res.json())
       .then((data) => {
         setEmployees(data)
-        // store full list in ref for resets
-        // productList.current = data
       })
       .catch((error) => console.error(error))
   }, [])

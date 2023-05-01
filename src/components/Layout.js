@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
           <Link href="/employees">Employees</Link>
         </nav>
       </header>
-      <main className="container mx-auto">{children}</main>
+      <main className="container mx-auto  min-h-screen">{children}</main>
     </>
   )
 }
