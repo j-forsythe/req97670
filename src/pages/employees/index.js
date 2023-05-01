@@ -24,9 +24,15 @@ const Employees = () => {
 
   return (
     <>
-      <div className="flex  my-4">
+      <div className="flex  my-4 justify-between">
         <Link href="/">&lt;&nbsp;Back</Link>
-        <h2 className="basis-full text-center">Employees</h2>
+        <h2 className="text-center">Employees</h2>
+        <Link
+          href="/employees/create"
+          className=" bg-indigo-700 text-white font-bold py-2 px-4  rounded hover:bg-gray-600"
+        >
+          Add new employee
+        </Link>
       </div>
 
       <div className="relative rounded-xl overflow-auto">

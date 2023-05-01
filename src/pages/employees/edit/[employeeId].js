@@ -25,7 +25,7 @@ const EditEmployee = () => {
         console.log('Success:', data)
         // if call is successful update state to inform user
         setEmployeeUpdated(true)
-        router.push('/')
+        router.push('/employees')
       })
       .catch((error) => {
         console.error('Error:', error)
@@ -53,7 +53,7 @@ const EditEmployee = () => {
   return (
     <>
       <div className="flex  my-4">
-        <Link href="/">&lt;&nbsp;Back</Link>
+        <Link href="/employees">&lt;&nbsp;Back</Link>
         <h2 className="basis-full text-center">
           {' '}
           Editing {data.firstName} {data.lastName}
