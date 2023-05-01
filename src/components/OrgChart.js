@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { Tree, TreeNode } from 'react-organizational-chart'
 
 import { flatToTree } from '../utils/flatToTree'
@@ -6,15 +6,18 @@ import PositionBadge from './PositionBadge'
 
 const OrgChart = () => {
   const [employees, setEmployees] = useState(null)
-  const [positions, setPositions] = useState(null)
+  const [positionTree, setPositionTree] = useState(null)
   const [isLoading, setLoading] = useState(false)
+  const positionData = useRef(null)
 
   function renderLeaves(node) {
     return (
       <TreeNode
         label={
           <PositionBadge
-            position={node}
+            position={positionData.current.find(
+              (position) => position.id === node.id,
+            )}
             employee={employees?.find((emp) => emp.id === node.employeeId)}
           />
         }
@@ -33,11 +36,11 @@ const OrgChart = () => {
     fetch('/api/positions')
       .then((res) => res.json())
       .then((data) => {
-        const { roots } = flatToTree(data, 'id', 'reportsTo', 0)
-        setPositions(roots)
+        const { roots } = flatToTree(data, 'id', 'reportsTo', '0')
+        setPositionTree(roots)
         setLoading(false)
-        // store full list in ref for resets
-        // productList.current = data
+        // store full list in ref for reference
+        positionData.current = data
       })
       .catch((error) => console.error(error))
   }, [])
@@ -57,20 +60,20 @@ const OrgChart = () => {
   }, [])
 
   if (isLoading) return <p>Loading...</p>
-  if (!positions) return <p>No data</p>
+  if (!positionTree) return <p>No data</p>
 
   return (
     <Tree
       label={
         <PositionBadge
-          position={positions[1]}
+          position={positionTree[1]}
           employee={employees?.find(
-            (emp) => emp.id === positions[1].employeeId,
+            (emp) => emp.id === positionTree[1].employeeId,
           )}
         />
       }
     >
-      {positions[1].children.map((node) => renderLeaves(node))}
+      {positionTree[1].children.map((node) => renderLeaves(node))}
     </Tree>
   )
 }

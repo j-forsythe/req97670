@@ -40,7 +40,7 @@ export default function handler(req, res) {
           data[index] = editPosition
         } else {
           // position not found
-          res.status(500).end()
+          return res.status(500).end()
         }
 
         // write updated JSON to file
