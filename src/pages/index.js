@@ -10,9 +10,7 @@ export default function Home() {
     <section
       className={`flex min-h-screen flex-col items-center justify-between p-24 ${inter.className}`}
     >
-      <h2 className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-        Organizational Chart
-      </h2>
+      <h2 className="">Organizational Chart</h2>
       <OrgChart />
     </section>
   )

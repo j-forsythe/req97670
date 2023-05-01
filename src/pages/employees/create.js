@@ -22,7 +22,7 @@ const NewEmployee = () => {
         console.log('Success:', data)
         // inform user employee added successfully
         setEmployeeAdded(true)
-        router.push('/')
+        router.push('/employees')
       })
       .catch((error) => {
         console.error('Error:', error)
