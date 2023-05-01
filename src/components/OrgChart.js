@@ -1,14 +1,15 @@
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState, useRef, useContext } from 'react'
 import { Tree, TreeNode } from 'react-organizational-chart'
 
 import { flatToTree } from '../utils/flatToTree'
 import PositionBadge from './PositionBadge'
+import { EmployeeContext } from '@/utils/EmployeeContext'
 
 const OrgChart = () => {
-  const [employees, setEmployees] = useState(null)
   const [positionTree, setPositionTree] = useState(null)
   const [isLoading, setLoading] = useState(false)
   const positionData = useRef(null)
+  const employees = useContext(EmployeeContext)
 
   function renderLeaves(node) {
     return (
@@ -41,20 +42,6 @@ const OrgChart = () => {
         setLoading(false)
         // store full list in ref for reference
         positionData.current = data
-      })
-      .catch((error) => console.error(error))
-  }, [])
-
-  // get all employees on render
-  useEffect(() => {
-    setLoading(true)
-    fetch('/api/employees')
-      .then((res) => res.json())
-      .then((data) => {
-        setEmployees(data)
-        setLoading(false)
-        // store full list in ref for resets
-        // productList.current = data
       })
       .catch((error) => console.error(error))
   }, [])
