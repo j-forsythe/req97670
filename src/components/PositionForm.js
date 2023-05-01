@@ -17,6 +17,7 @@ const PositionForm = ({
   handleSubmit = () => {},
   submitSuccess = false,
   submitError = false,
+  reportingId = undefined,
 }) => {
   const employees = useContext(EmployeeContext)
 
@@ -26,7 +27,7 @@ const PositionForm = ({
         initialValues={
           positionData ?? {
             title: '',
-            reportsTo: '',
+            reportsTo: reportingId ?? '1',
             employeeId: '',
           }
         }
