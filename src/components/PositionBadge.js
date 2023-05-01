@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import UnfillPosition from './UnfillPosition'
+import Link from 'next/link'
 
 const PositionBadge = ({ employee, position }) => {
   const { title, id: position_id } = position
@@ -12,7 +13,9 @@ const PositionBadge = ({ employee, position }) => {
       onClick={() => setSelected(!selected)}
     >
       <dt>
-        {title} {position_id}
+        <strong>
+          {title} {position_id}
+        </strong>
       </dt>
       <dd></dd>
       {filled ? (
@@ -21,21 +24,28 @@ const PositionBadge = ({ employee, position }) => {
             {firstName} {lastName}
           </dd>
           <dd>{employeeId}</dd>
+          {selected && (
+            <UnfillPosition
+              position={position}
+              onUnfillPosition={() => {
+                setFilled(false)
+              }}
+            />
+          )}
         </>
       ) : (
-        <dd>
-          <strong>vacant</strong>
-        </dd>
+        <>
+          <dd>Vacant</dd>
+        </>
       )}
-      {selected ? (
-        <UnfillPosition
-          position={position}
-          onUnfillPosition={() => {
-            console.log('triggered')
-            setFilled(false)
-          }}
-        />
-      ) : null}
+      {selected && (
+        <Link
+          href={`/positions/edit/${position_id}`}
+          className=" bg-indigo-100 p-2 font-bold rounded hover:bg-gray-600 m-2"
+        >
+          Edit Position
+        </Link>
+      )}
     </dl>
   )
 }
