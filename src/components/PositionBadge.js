@@ -39,12 +39,20 @@ const PositionBadge = ({ employee, position }) => {
         </>
       )}
       {selected && (
-        <Link
-          href={`/positions/edit/${position_id}`}
-          className=" bg-indigo-100 p-2 font-bold rounded hover:bg-gray-600 m-2"
-        >
-          Edit Position
-        </Link>
+        <div className="flex">
+          <Link
+            href={`/positions/edit/${position_id}`}
+            className=" bg-rose-100 p-2 font-bold rounded hover:bg-gray-600 m-2"
+          >
+            Edit Position
+          </Link>
+          <Link
+            href={`/positions/create?rId=${position_id}`}
+            className=" bg-purple-300 p-2 font-bold rounded hover:bg-gray-600 m-2"
+          >
+            Add Position
+          </Link>
+        </div>
       )}
     </dl>
   )
