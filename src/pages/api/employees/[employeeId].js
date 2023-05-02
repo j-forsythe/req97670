@@ -1,7 +1,7 @@
 import fs from 'fs'
 const jsonfile = require('jsonfile')
 const path = require('path')
-const file = path.join(process.cwd(), 'tmp/employees.json')
+const file = path.join(process.cwd(), '/tmp/employees.json')
 
 export default function handler(req, res) {
   const { employeeId } = req.query
