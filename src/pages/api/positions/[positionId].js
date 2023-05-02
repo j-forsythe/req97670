@@ -1,5 +1,6 @@
 const jsonfile = require('jsonfile')
 const path = require('path')
+const fs = require('fs')
 
 const file = path.join(process.cwd(), 'data/positions.json')
 const tmpFile = '/tmp/positions.json'
