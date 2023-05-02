@@ -1,39 +1,48 @@
 const jsonfile = require('jsonfile')
 const path = require('path')
+const fs = require('fs')
 
 const file = path.join(process.cwd(), 'data/employees.json')
+const tmpFile = '/tmp/employees.json'
 
 export default function handler(req, res) {
+  let writeStream = fs.existsSync(tmpFile)
+    ? fs.createReadStream(tmpFile)
+    : fs.createReadStream(file).pipe(fs.createWriteStream(tmpFile))
+
   switch (req.method) {
     case 'GET':
-      // read JSON object from file
-      jsonfile.readFile(file, 'utf-8', (err, data) => {
-        if (err) {
-          throw err
-        }
-        // send JSON object
-        res.status(200).json(data)
+      writeStream.on('finish', function () {
+        // read JSON object from file
+        jsonfile.readFile(tmpFile, 'utf-8', (err, data) => {
+          if (err) {
+            throw err
+          }
+          // send JSON object
+          res.status(200).json(data)
+        })
       })
       break
     case 'POST':
       let newEmployee = req.body
-
-      jsonfile.readFile(file, 'utf-8', (err, data) => {
-        if (err) {
-          throw err
-        }
-
-        newEmployee.id = `emp0${data.length + 1}`
-
-        // add new record
-        data.push(newEmployee)
-
-        // write JSON to a file
-        jsonfile.writeFile(file, data, { spaces: 4 }, (err) => {
+      writeStream.on('finish', function () {
+        jsonfile.readFile(tmpFile, 'utf-8', (err, data) => {
           if (err) {
             throw err
           }
-          console.log('JSON data is saved.')
+
+          newEmployee.id = `emp0${data.length + 1}`
+
+          // add new record
+          data.push(newEmployee)
+
+          // write JSON to a file
+          jsonfile.writeFile(tmpFile, data, { spaces: 4 }, (err) => {
+            if (err) {
+              throw err
+            }
+            console.log('JSON data is saved.')
+          })
         })
       })
       // respond with new employee data
