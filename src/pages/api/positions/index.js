@@ -4,10 +4,9 @@ const jsonfile = require('jsonfile')
 const path = require('path')
 
 const file = path.join(process.cwd(), '/tmp/positions.json')
+const readStream = fs.createReadStream(`${file}`)
 
 export default function handler(req, res) {
-  const readStream = fs.createReadStream(`${file}`)
-
   switch (req.method) {
     case 'GET':
       readStream.on('open', function () {
